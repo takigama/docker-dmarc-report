@@ -1,8 +1,6 @@
-# docker-dmarc-report [![Build Status](https://jenkins.bln.space/buildStatus/icon?job=docker-images%2Fdocker-jenkins%2Fmaster)](https://jenkins.bln.space/job/docker-images/job/docker-jenkins/job/master/) [![Docker Pulls](https://img.shields.io/docker/pulls/gutmensch/dmarc-report.svg)](https://registry.hub.docker.com/u/gutmensch/dmarc-report/)
+# docker-dmarc-report
 
-This image is intended to combine a dmarc report parser (see https://github.com/techsneeze/dmarcts-report-parser by TechSneeze.com and John Bieling) with a report viewer (see https://github.com/techsneeze/dmarcts-report-viewer/ by the same people) into a runnable docker image / microservice.
-
-It fetches dmarc report mails regularly from an IMAP server, stores them into a MySQL DB and visualizes them via Webserver/PHP module.
+Modified version to use local files rather than an imap server
 
 ## Howto
 1. Create a _dmarc.example.com TXT DNS record for your domain, containg an IMAP postbox, e.g.

@@ -1,0 +1,30 @@
+version: '3.6'
+
+services:
+  dmarc-report:
+    image: "test43211234:test"
+    hostname: dmarc-report
+    container_name: dmarc-report
+    volumes:
+      - ./test:/reports
+    depends_on:
+      - db
+    ports:
+      - "4080:80"
+    environment:
+      - "REPORT_DB_HOST=db"
+      - "REPORT_DB_PORT=3306"
+      - "REPORT_DB_NAME=dmarc_report"
+      - "REPORT_DB_USER=dmarc_report"
+      - "REPORT_DB_PASS=dbpassword"
+      - "PARSER_IMAP_READ_FOLDER=none"
+
+
+  db:
+    image: mariadb:10
+    command: --skip-innodb-read-only-compressed
+    environment:
+      - "MYSQL_ROOT_PASSWORD=dbrootpassword"
+      - "MYSQL_DATABASE=dmarc_report"
+      - "MYSQL_USER=dmarc_report"
+      - "MYSQL_PASSWORD=dbpassword"
