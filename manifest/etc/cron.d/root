@@ -1,2 +1,2 @@
-15 * * * * /usr/bin/dmarcts-report-parser.pl -x --delete -d -r /reports/*.xml 1>>/var/log/nginx/dmarc-reports.log 2>&1
+5 * * * * /usr/bin/dmarcts-report-parser.pl -x --delete -d -r /reports/*.xml 1>>/var/log/nginx/dmarc-reports.log 2>&1
 
