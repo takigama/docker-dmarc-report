@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   dmarc-report:
-    image: "test43211234:test"
+    image: "test43211234:test2"
     hostname: dmarc-report
     container_name: dmarc-report
     volumes:
